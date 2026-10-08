@@ -1,0 +1,6 @@
+.env
+upload/
+library/
+postgres/
+pgdata/
+node_modules/
