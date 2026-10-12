@@ -3,4 +3,5 @@ upload/
 library/
 postgres/
 pgdata/
-node_modules/
+node_modules/*.tar
+*.bak

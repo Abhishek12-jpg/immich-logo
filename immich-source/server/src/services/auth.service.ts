@@ -211,6 +211,17 @@ export class AuthService extends BaseService {
     return mapUserAdmin(admin);
   }
 
+  async signUp(dto: SignUpDto): Promise<UserAdminResponseDto> {
+    const user = await this.createUser({
+      isAdmin: false,
+      email: dto.email,
+      name: dto.name,
+      password: dto.password,
+      shouldChangePassword: false,
+    });
+
+    return mapUserAdmin(user);
+  }
   async authenticate({ headers, queryParams, metadata }: ValidateRequest): Promise<AuthDto> {
     const authDto = await this.validate({ headers, queryParams });
     const { adminRoute, sharedLinkRoute, uri } = metadata;

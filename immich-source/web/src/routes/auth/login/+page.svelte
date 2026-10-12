@@ -151,6 +151,9 @@
 
         <Button type="submit" size="large" shape="round" fullWidth {loading} class="mt-6">{$t('to_login')}</Button>
       </form>
+      <p class="text-center text-sm">
+        <a href="/auth/signup" class="underline">Sign up</a>
+      </p>
     {/if}
 
     {#if publicConfig.oauth.enabled}

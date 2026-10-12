@@ -50,6 +50,16 @@ export class AuthController {
     });
   }
 
+  @Post('sign-up')
+  @Endpoint({
+    summary: 'Register user',
+    description: 'Create a new regular user account.',
+    history: new HistoryBuilder().added('v1').beta('v1').stable('v2'),
+  })
+  @Authenticated({ public: true })
+  signUp(@Body() dto: SignUpDto): Promise<UserAdminResponseDto> {
+    return this.service.signUp(dto);
+  }
   @Post('admin-sign-up')
   @Endpoint({
     summary: 'Register admin',

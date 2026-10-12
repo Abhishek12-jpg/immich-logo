@@ -74,6 +74,7 @@
 
 <AdminPageLayout breadcrumbs={[{ title: data.meta.title }]} actions={[Create]}>
   <Container center size="large">
+    <p class="mt-4 text-sm font-medium">Total users: {users.filter((user) => !user.deletedAt).length}</p>
     <Table class="mt-4" striped spacing="small" size="small">
       <TableHeader>
         <TableHeading class={classes.column1}>{$t('name')}</TableHeading>
